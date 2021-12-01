@@ -1,20 +1,25 @@
 <template>
   <main class="contenitore">
-     <div class="card">
-         <h3>Titolo</h3>
-         <p>Titolo Originale</p>
-         <p>Lingua</p>
-         <p>Voto</p>
-     </div>
+     <Card 
+     :titolo="filmDaStampare.title"
+     :titoloOriginale="filmDaStampare.original_title"
+     :lingua="filmDaStampare.original_language"
+     :giudizio="filmDaStampare.vote_average"
+     />
   </main>
 </template>
 
 <script>
 // import axios from 'axios';
+import Card from './Card.vue'
 
 export default {
 
     name: 'Main',
+
+    components:{
+        Card
+    },
 
     props:{
         filmDaStampare: Object
@@ -33,13 +38,8 @@ export default {
 
 main{
     @include center();
-    .card{
-        @include center();
-        flex-direction: column;
-        p{
-            margin: 10px 0px 5px 0px;
-        }
-    }
+    
+    
 }
 
 </style>
