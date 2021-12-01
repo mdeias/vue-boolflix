@@ -25,6 +25,7 @@ export default {
     methods: {
         cerca(){
             console.log('Header.vue fa partire un evento collegato alla stringa scritta nel input', this.cercaFilm);
+            this.$emit('nuovaRicerca', this.cercaFilm);
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <Header @nuovaRicerca="cercaContenuto"/>
     <Main/>
   </div>
 </template>
@@ -25,7 +25,9 @@ export default {
   },
 
   methods:{
-    
+    cercaContenuto(nome){
+       console.log('App.vue ha ricevuto qualcosa da un evento (nuovaRicerca)', nome);
+    }
   }
 }
 </script>
