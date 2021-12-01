@@ -32,8 +32,8 @@ export default {
        axios.get(`${this.apiUrl}query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
        .then(response => {
          console.log('Risposta API', response);
-         this.oggettoFilm = response.data.results;
-         console.log(this.oggettoFilm);
+         this.arrayFilm = response.data.results;
+         console.log(this.arrayFilm);
        }).catch(errore =>{
          console.log(errore);
        });

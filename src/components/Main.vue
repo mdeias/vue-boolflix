@@ -13,7 +13,7 @@
 
 <script>
 
-import Card from './Card.vue'
+import Card from './Card.vue';
 
 export default {
 
@@ -28,9 +28,6 @@ export default {
         film: Object
     },
 
-    methods:{
-
-    }
 }
 </script>
 
