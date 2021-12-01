@@ -15,7 +15,7 @@ export default {
         titolo: String,
         titoloOriginale: String,
         lingua: String,
-        giudizio: String
+        giudizio: Number
     }
 
 }
@@ -33,5 +33,8 @@ export default {
     p{
         margin: 10px 0px 5px 0px;
     }
+    width: 12%;
+    margin: 10px;
+    border: 2px solid red;
 }
 </style>

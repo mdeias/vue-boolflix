@@ -1,16 +1,18 @@
 <template>
   <main class="contenitore">
      <Card 
-     :titolo="filmDaStampare.title"
-     :titoloOriginale="filmDaStampare.original_title"
-     :lingua="filmDaStampare.original_language"
-     :giudizio="filmDaStampare.vote_average"
+     v-for="film in filmDaStampare"
+     :key="film.id"
+     :titolo="film.title"
+     :titoloOriginale="film.original_title"
+     :lingua="film.original_language"
+     :giudizio="film.vote_average"
      />
   </main>
 </template>
 
 <script>
-// import axios from 'axios';
+
 import Card from './Card.vue'
 
 export default {
@@ -22,7 +24,8 @@ export default {
     },
 
     props:{
-        filmDaStampare: Object
+        filmDaStampare: Array,
+        film: Object
     },
 
     methods:{
@@ -37,8 +40,8 @@ export default {
 @import '../assets/style/mix.scss';
 
 main{
-    @include center();
-    
+    @include center(sinistra);
+    flex-wrap: wrap;
     
 }
 

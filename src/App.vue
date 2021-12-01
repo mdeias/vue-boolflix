@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header @nuovaRicerca="cercaContenuto"/>
-    <Main :filmDaStampare="oggettoFilm"/>
+    <Main :filmDaStampare="arrayFilm"/>
   </div>
 </template>
 
@@ -20,8 +20,8 @@ export default {
 
   data(){
     return{
-      apiUrl: "https://api.themoviedb.org/3/movie/550?api_key=abeacf18ff900bf858b6c58ae41300e1",
-      oggettoFilm: {}
+      apiUrl: "https://api.themoviedb.org/3/search/movie?",
+      arrayFilm: [],
     }
   },
 
@@ -29,10 +29,10 @@ export default {
     cercaContenuto(nome){
        console.log('App.vue ha ricevuto qualcosa da un evento (nuovaRicerca)', nome);
 
-       axios.get(this.apiUrl)
+       axios.get(`${this.apiUrl}query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
        .then(response => {
          console.log('Risposta API', response);
-         this.oggettoFilm = response.data;
+         this.oggettoFilm = response.data.results;
          console.log(this.oggettoFilm);
        }).catch(errore =>{
          console.log(errore);
