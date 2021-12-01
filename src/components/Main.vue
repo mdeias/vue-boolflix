@@ -15,7 +15,11 @@
 export default {
 
     name: 'Main',
-    
+
+    props:{
+        filmDaStampare: Object
+    },
+
     methods:{
 
     }
