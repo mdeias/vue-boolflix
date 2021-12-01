@@ -5,11 +5,9 @@
       type="text" 
       placeholder="Cerca film"
       v-model="cercaFilm"
+      @keypress.enter="cerca">
       />
-      <button
-      @click="cerca">
-      Cerca
-      </button>
+      
   </header>
 
 </template>
