@@ -6,14 +6,26 @@
 </template>
 
 <script>
+// import axios from 'axios';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 
 export default {
   name: 'App',
+
   components: {
     Header,
     Main
+  },
+
+  data(){
+    return{
+      apiUrl: "https://api.themoviedb.org/3/movie/550?api_key=abeacf18ff900bf858b6c58ae41300e1",
+    }
+  },
+
+  methods:{
+    
   }
 }
 </script>

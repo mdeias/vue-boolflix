@@ -1,6 +1,11 @@
 <template>
-  <main>
-      <h3>main</h3>
+  <main class="contenitore">
+     <div class="card">
+         <h3>Titolo</h3>
+         <p>Titolo Originale</p>
+         <p>Lingua</p>
+         <p>Voto</p>
+     </div>
   </main>
 </template>
 
@@ -8,7 +13,12 @@
 // import axios from 'axios';
 
 export default {
-    name: 'Main'
+
+    name: 'Main',
+    
+    methods:{
+
+    }
 }
 </script>
 
@@ -17,5 +27,15 @@ export default {
 @import '../assets/style/utilities.scss';
 @import '../assets/style/mix.scss';
 
+main{
+    @include center();
+    .card{
+        @include center();
+        flex-direction: column;
+        p{
+            margin: 10px 0px 5px 0px;
+        }
+    }
+}
 
 </style>
