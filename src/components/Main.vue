@@ -6,6 +6,7 @@
             <Card 
             v-for="film in filmDaStampare"
             :key="film.id"
+            :image="film.poster_path"
             :titolo="film.title"
             :titoloOriginale="film.original_title"
             :lingua="film.original_language"
@@ -20,6 +21,7 @@
             <Card 
             v-for="serie in serieDaStampare"
             :key="serie.id"
+            :image="serie.poster_path"
             :titolo="serie.name"
             :titoloOriginale="serie.original_name"
             :lingua="serie.original_language"

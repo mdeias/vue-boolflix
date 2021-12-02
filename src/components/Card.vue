@@ -1,7 +1,10 @@
 <template>
   <div class="card">
+        <img :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
          <h3>Titolo: {{titolo}}</h3>
-         <p>Titolo Originale: {{titoloOriginale}}</p>
+         <p>
+             Titolo Originale: {{titoloOriginale}}
+         </p>
          <p>Lingua: {{lingua}}</p>
          <p>Voto: {{giudizio}}</p>
      </div>
@@ -12,6 +15,8 @@
 export default {
     name: 'Card',
     props:{
+
+        image: String,
         titolo: String,
         titoloOriginale: String,
         lingua: String,
