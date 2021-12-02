@@ -1,14 +1,33 @@
 <template>
-  <main class="contenitore">
-     <Card 
-     v-for="film in filmDaStampare"
-     :key="film.id"
-     :titolo="film.title"
-     :titoloOriginale="film.original_title"
-     :lingua="film.original_language"
-     :giudizio="film.vote_average"
-     />
-  </main>
+    <main class="contenitore">
+
+        <h2>Film</h2>
+        <div class="row">
+            <Card 
+            v-for="film in filmDaStampare"
+            :key="film.id"
+            :titolo="film.title"
+            :titoloOriginale="film.original_title"
+            :lingua="film.original_language"
+            :giudizio="film.vote_average"
+            />
+
+        </div>
+
+        <h2>Serie</h2>
+        <div class="row">
+
+            <Card 
+            v-for="serie in serieDaStampare"
+            :key="serie.id"
+            :titolo="serie.name"
+            :titoloOriginale="serie.original_name"
+            :lingua="serie.original_language"
+            :giudizio="serie.vote_average"
+            />
+
+        </div>
+    </main>
 </template>
 
 <script>
@@ -24,8 +43,8 @@ export default {
     },
 
     props:{
-        filmDaStampare: Array,
-        film: Object
+        filmDaStampare: Array,  
+        serieDaStampare: Array  
     },
 
 }
@@ -37,9 +56,16 @@ export default {
 @import '../assets/style/mix.scss';
 
 main{
-    @include center(sinistra);
-    flex-wrap: wrap;
     
+    .row{
+        margin: 30px 0px;
+        overflow:auto ;
+        @include center(sinistra);
+        height: 290px;
+    }
+    h2{
+        color:white;
+    }
 }
 
 </style>

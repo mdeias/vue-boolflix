@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header @nuovaRicerca="cercaContenuto"/>
-    <Main :filmDaStampare="arrayFilm"/>
+    <Main :filmDaStampare="arrayFilm" :serieDaStampare="arraySerieTv"/>
   </div>
 </template>
 
@@ -20,8 +20,9 @@ export default {
 
   data(){
     return{
-      apiUrl: "https://api.themoviedb.org/3/search/movie?",
+      apiUrl: "https://api.themoviedb.org/3/search/",
       arrayFilm: [],
+      arraySerieTv: []
     }
   },
 
@@ -29,11 +30,20 @@ export default {
     cercaContenuto(nome){
        console.log('App.vue ha ricevuto qualcosa da un evento (nuovaRicerca)', nome);
 
-       axios.get(`${this.apiUrl}query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+       axios.get(`${this.apiUrl}movie?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
        .then(response => {
-         console.log('Risposta API', response);
+         console.log('Risposta API film', response);
          this.arrayFilm = response.data.results;
          console.log(this.arrayFilm);
+       }).catch(errore =>{
+         console.log(errore);
+       });
+
+       axios.get(`${this.apiUrl}tv?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+       .then(response => {
+         console.log('Risposta API serie', response);
+         this.arraySerieTv = response.data.results;
+         console.log(this.arraySerieTv);
        }).catch(errore =>{
          console.log(errore);
        });

@@ -1,13 +1,13 @@
 <template>
 
   <header class="contenitore">
+      <h1>BOOLFLIX</h1>
       <input 
       type="text" 
       placeholder="Cerca film"
       v-model="cercaFilm"
       @keypress.enter="cerca">
-      />
-      
+      />  
   </header>
 
 </template>
@@ -35,16 +35,19 @@ export default {
 @import '../assets/style/mix.scss';
 
 header{
-    @include center();
-
+    @include center(sinistra);
+    position: relative;
     input{
-        margin: 50px 20px 50px 0px;
-        padding: 5px;
-        width: 30%;
+        margin: 30px 0px;
+        padding: 4px;
+        width: 200px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
     }
-    button{
-        padding: 5px;
-        background-color: #fff;
+    h1{
+        margin: 30px 0px;
+        color: red;
     }
 }
 

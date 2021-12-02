@@ -34,7 +34,9 @@ export default {
     border: 2px solid red;
     padding:15px;
     margin: 20px 1px;
-    width: 180px;
+    flex-basis: 180px;
+    flex-grow: 0;
+    flex-shrink: 0;
     height: 270px;
     background-color: gray;
     p{
