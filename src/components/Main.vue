@@ -11,6 +11,7 @@
             :titoloOriginale="film.original_title"
             :lingua="film.original_language"
             :giudizio="film.vote_average"
+            :descrizione="film.overview"
             />
 
         </div>
@@ -26,7 +27,7 @@
             :titoloOriginale="serie.original_name"
             :lingua="serie.original_language"
             :giudizio="serie.vote_average"
-            
+            :descrizione="serie.overview"
             />
 
         </div>
