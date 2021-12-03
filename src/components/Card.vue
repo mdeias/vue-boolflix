@@ -26,7 +26,7 @@
             </div>
             <div class="descrizione">
                 <p>
-                    <span>Descrizione:</span>{{descrizione}}
+                    <span>Descrizione: </span>{{descrizione}}
                 </p>
             </div>
         </div>
@@ -80,28 +80,31 @@ export default {
 
     .card__face--back{
         background-color: gray;
-        padding: 5px;
+        padding: 10px;
+        width: 200px;
         height: 300px;
         p{
-            margin: 10px 0px 10px 10px;
+            margin: 10px 0px;
             font-size: 12px;
+            color: black;
         }
         h3{
+            color: white;
             font-size: 15px;
-            margin: 10px 0px 10px 10px;
+            margin: 10px 0px;
             
         }
         .bandiera{
             border: 1px solid black;
             border-radius: 2px;
-            margin-left: 10px;
+            
             width: 20px;
             display: inline-block;
             height: 12px;
             
         }
         .giudizio{
-            margin: 0px 10px 0px 10px;
+            margin: 10px;
             
             i{
                 font-size: 10px;
@@ -118,6 +121,7 @@ export default {
 
         p{
             span{
+                color: white;
                 font-size: 13px;
                 font-weight: 600;
             }

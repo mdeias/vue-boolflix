@@ -1,8 +1,9 @@
 <template>
     <main class="contenitore">
 
+        <div class="row" v-if="(filmDaStampare.length > 0)">
         <h2>Film</h2>
-        <div class="row">
+
             <Card 
             v-for="film in filmDaStampare"
             :key="film.id"
@@ -16,8 +17,8 @@
 
         </div>
 
+        <div class="row" v-if="serieDaStampare.length > 0">
         <h2>Serie</h2>
-        <div class="row">
 
             <Card 
             v-for="serie in serieDaStampare"
@@ -58,6 +59,10 @@ export default {
         }
     },
 
+    mounted: {
+        
+    }
+
 }
 </script>
 
@@ -70,12 +75,16 @@ main{
     
     .row{
         margin: 30px 0px;
-        overflow:auto ;
+        overflow:auto;
         @include center(sinistra);
-        height: 290px;
+        height: 400px;
+        position: relative;
     }
     h2{
+        position: absolute;
         color:white;
+        top: 0;
+        left: 0;
     }
 }
 
