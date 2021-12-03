@@ -103,9 +103,7 @@ export default {
             height: 12px;
             
         }
-        .giudizio{
-            margin: 10px;
-            
+        .giudizio{           
             i{
                 font-size: 10px;
                 margin-right: 2px;

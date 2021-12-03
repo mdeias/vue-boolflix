@@ -1,7 +1,7 @@
 <template>
     <main class="contenitore">
 
-        <div class="row" v-if="(filmDaStampare.length > 0)">
+        <div class="row" v-if="filmDaStampare.length > 0">
         <h2>Film</h2>
 
             <Card 
@@ -54,14 +54,11 @@ export default {
 
     data(){
         return{
-           visible: true,
+           
            bandiere: ['it', 'en']
         }
     },
 
-    mounted: {
-        
-    }
 
 }
 </script>
