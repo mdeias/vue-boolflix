@@ -10,10 +10,21 @@
              v-if="this.bandiere.includes(lingua)" 
              :src="require(`../assets/img/${lingua}.png`)"
              :alt="lingua">
-
             <p v-else>Lingua: {{lingua}}</p>
          </div>
-         <p>Voto: {{giudizio}}</p>
+         <div class="giudizio">
+            <i
+
+            v-for="(icon, index) in 5"
+            :key="index"
+            class="fa-star"
+
+            :class="index < Math.round(giudizio/2) ? 'fas' : 'far' ">
+
+            
+            
+            </i>
+         </div>
      </div>
 </template>
 
@@ -45,7 +56,7 @@ export default {
 @import '../assets/style/mix.scss';
 
 .card{
-    @include center();
+    @include center(sinistra);
     align-items: flex-start;
     flex-direction: column;
     // border: 1px solid white;
@@ -78,6 +89,17 @@ export default {
         display: inline-block;
         height: 12px;
     }
+
+    .giudizio{
+        margin: 0px 10px 0px 10px;
+
+        i {
+        font-size: 10px;
+        margin-right: 2px;
+        color: gold;
+        }
+    }
+    
 
 }
 </style>
