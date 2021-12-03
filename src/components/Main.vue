@@ -26,6 +26,7 @@
             :titoloOriginale="serie.original_name"
             :lingua="serie.original_language"
             :giudizio="serie.vote_average"
+            
             />
 
         </div>
@@ -47,6 +48,13 @@ export default {
     props:{
         filmDaStampare: Array,  
         serieDaStampare: Array  
+    },
+
+    data(){
+        return{
+           visible: true,
+           bandiere: ['it', 'en']
+        }
     },
 
 }

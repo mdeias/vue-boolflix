@@ -5,7 +5,14 @@
          <p>
              Titolo Originale: {{titoloOriginale}}
          </p>
-         <p>Lingua: {{lingua}}</p>
+         <div>
+             <img class="bandiera"
+             v-if="this.bandiere.includes(lingua)" 
+             :src="require(`../assets/img/${lingua}.png`)"
+             :alt="lingua">
+
+            <p v-else>Lingua: {{lingua}}</p>
+         </div>
          <p>Voto: {{giudizio}}</p>
      </div>
 </template>
@@ -21,6 +28,11 @@ export default {
         titoloOriginale: String,
         lingua: String,
         giudizio: Number
+    },
+    data(){
+        return{
+            bandiere: ['it', 'en']
+        }
     }
 
 }
@@ -36,20 +48,36 @@ export default {
     @include center();
     align-items: flex-start;
     flex-direction: column;
-    border: 2px solid red;
-    padding:15px;
-    margin: 20px 1px;
+    // border: 1px solid white;
+    cursor: pointer;
+    margin: 0px 2px;
     flex-basis: 180px;
     flex-grow: 0;
     flex-shrink: 0;
     height: 270px;
-    background-color: gray;
+    background-color: grey;
     p{
-        margin: 10px 0px 5px 0px;
+        margin: 10px 0px 10px 10px;
         font-size: 12px;
+        // display: none;
     }
     h3{
         font-size: 15px;
+        margin: 10px 0px 10px 10px;
+        // display: none;
     }
+    img{
+        height: 270px;
+        display: none;
+    }
+    .bandiera{
+        border: 1px solid black;
+        border-radius: 2px;
+        margin-left: 10px;
+        width: 20px;
+        display: inline-block;
+        height: 12px;
+    }
+
 }
 </style>
