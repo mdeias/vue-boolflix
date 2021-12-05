@@ -3,8 +3,8 @@
 
         <div class="card__face card__face--front">
 
-        <!-- <h1 v-if="image = null">{{titolo}}</h1> -->
-        <img :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
+        <img v-if="this.poster" :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
+        <h1 v-else >{{titolo}}</h1>
         
         </div>
 
@@ -53,7 +53,9 @@ export default {
     },
     data(){
         return{
-            bandiere: ['it', 'en']
+            bandiere: ['it', 'en'],
+            poster: this.image
+            
         }
     }
 
@@ -81,6 +83,17 @@ export default {
 
     &:hover {
       transform: rotateY(0.5turn);
+    }
+
+    .card__face--front{
+        position: relative;
+        h1{
+            
+            font-size: 20px;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+        }
     }
 
     .card__face--back{

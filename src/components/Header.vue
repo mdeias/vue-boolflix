@@ -63,6 +63,7 @@ export default {
         cerca(){
             console.log('Header.vue fa partire un evento collegato alla stringa scritta nel input', this.cercaFilm);
             this.$emit('nuovaRicerca', this.cercaFilm);
+            
         }
     }
 }
@@ -93,7 +94,7 @@ header{
             @include center(destra);
             position: relative;
             input{
-                padding: 4px;
+                padding: 3px;
                 width: 200px;
             }
             i{
