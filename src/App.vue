@@ -50,7 +50,26 @@ export default {
     }
   },
 
-  
+  mounted(){
+
+    axios.get(`${this.apiUrl}movie?query=avengers&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+    .then(response => {
+      console.log('Risposta API film', response);
+      this.arrayFilm = response.data.results;
+      console.log(this.arrayFilm);
+    }).catch(errore =>{
+      console.log(errore);
+    });
+
+    axios.get(`${this.apiUrl}tv?query=avengers&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+    .then(response => {
+      console.log('Risposta API serie', response);
+      this.arraySerieTv = response.data.results;
+      console.log(this.arraySerieTv);
+    }).catch(errore =>{
+      console.log(errore);
+    });
+  }
 }
 </script>
 

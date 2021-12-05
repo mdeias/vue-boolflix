@@ -18,7 +18,7 @@
         </div>
 
         <div class="row" v-if="serieDaStampare.length > 0">
-        <h2>Serie</h2>
+        <h2>Serie TV</h2>
 
             <Card 
             v-for="serie in serieDaStampare"
@@ -74,7 +74,7 @@ main{
         margin: 30px 0px;
         overflow:auto;
         @include center(sinistra);
-        height: 400px;
+        height: 370px;
         position: relative;
     }
     h2{

@@ -79,20 +79,22 @@ export default {
     }
 
     .card__face--back{
-        background-color: gray;
+        background-color: black;
         padding: 10px;
         width: 200px;
         height: 300px;
         p{
             margin: 10px 0px;
             font-size: 12px;
-            color: black;
+            color: white;
         }
         h3{
             color: white;
             font-size: 15px;
             margin: 10px 0px;
-            
+            span{
+                color: red;
+            }
         }
         .bandiera{
             border: 1px solid black;
@@ -119,7 +121,7 @@ export default {
 
         p{
             span{
-                color: white;
+                color: red;
                 font-size: 13px;
                 font-weight: 600;
             }
