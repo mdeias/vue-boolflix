@@ -1,8 +1,8 @@
 <template>
     <main class="contenitore">
 
+        <h2 v-if="filmDaStampare.length > 0">Film</h2>
         <div class="row" v-if="filmDaStampare.length > 0">
-        <h2>Film</h2>
 
             <Card 
             v-for="film in filmDaStampare"
@@ -17,8 +17,8 @@
 
         </div>
 
+        <h2 v-if="serieDaStampare.length > 0">Serie TV</h2>
         <div class="row" v-if="serieDaStampare.length > 0">
-        <h2>Serie TV</h2>
 
             <Card 
             v-for="serie in serieDaStampare"
@@ -71,17 +71,16 @@ export default {
 main{
     
     .row{
-        margin: 30px 0px;
+        margin: 0px 0px 35px 0px;
         overflow:auto;
         @include center(sinistra);
-        height: 370px;
+        height: 330px;
         position: relative;
     }
     h2{
-        position: absolute;
+        
         color:white;
-        top: 0;
-        left: 0;
+        
     }
 }
 

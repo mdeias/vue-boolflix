@@ -75,7 +75,7 @@ export default {
 @import '../assets/style/mix.scss';
 
 header{
-    padding-top: 30px;
+    padding-top: 10px;
     .header-top{
         @include center(between);
         .header-sinistra{
