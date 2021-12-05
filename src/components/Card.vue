@@ -1,8 +1,13 @@
 <template>
     <div class="card">
+
         <div class="card__face card__face--front">
+
+        <!-- <h1 v-if="image = null">{{titolo}}</h1> -->
         <img :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
+        
         </div>
+
         <div class="card__face card__face--back">
             
             <h3><span>Titolo:</span> {{titolo}}</h3>
@@ -26,7 +31,7 @@
             </div>
             <div class="descrizione">
                 <p>
-                    <span>Descrizione: </span>{{descrizione}}
+                    {{descrizione}}
                 </p>
             </div>
         </div>

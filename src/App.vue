@@ -52,7 +52,7 @@ export default {
 
   mounted(){
 
-    axios.get(`${this.apiUrl}movie?query=avengers&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+    axios.get(`https://api.themoviedb.org/3/discover/movie/?certification_country=IT&certification=R&sort_by=vote_average.desc&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
     .then(response => {
       console.log('Risposta API film', response);
       this.arrayFilm = response.data.results;
@@ -61,7 +61,7 @@ export default {
       console.log(errore);
     });
 
-    axios.get(`${this.apiUrl}tv?query=avengers&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+    axios.get(`https://api.themoviedb.org/3/discover/tv?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
     .then(response => {
       console.log('Risposta API serie', response);
       this.arraySerieTv = response.data.results;
