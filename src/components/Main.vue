@@ -55,12 +55,10 @@ export default {
 
     data(){
         return{
-           filtro: this.selezioneUtente,
+           
            bandiere: ['it', 'en']
         }
     },
-
-
 }
 </script>
 

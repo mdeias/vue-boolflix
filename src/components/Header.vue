@@ -34,7 +34,7 @@
             v-model="selezionaFilmTv"
             @change="filtraContenuti"
             >
-                <option value="All" selected>All</option>
+                <option value="" selected>All</option>
                 <option value="Film">Film</option>
                 <option value="Serie">Serie</option>
             </select>

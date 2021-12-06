@@ -30,8 +30,33 @@ export default {
   methods:{
     cercaContenuto(nome){
        console.log('App.vue ha ricevuto qualcosa da un evento (nuovaRicerca)', nome);
+       
+       if (this.contenutoSelezionato === "Film") {
+         axios.get(`${this.apiUrl}movie?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+       .then(response => {
+         console.log('Risposta API film', response);
+         this.arrayFilm = response.data.results;
+         this.arraySerieTv = [];
+         console.log(this.arrayFilm);
+       }).catch(errore =>{
+         console.log(errore);
+       });
+       }
 
-       axios.get(`${this.apiUrl}movie?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+       else if (this.contenutoSelezionato === "Serie") {
+         axios.get(`${this.apiUrl}tv?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
+       .then(response => {
+         console.log('Risposta API serie', response);
+         this.arraySerieTv = response.data.results;
+         this.arrayFilm = [];
+         console.log(this.arraySerieTv);
+       }).catch(errore =>{
+         console.log(errore);
+       });
+       }
+
+       else if (this.contenutoSelezionato === "") {
+         axios.get(`${this.apiUrl}movie?query=${nome}&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)
        .then(response => {
          console.log('Risposta API film', response);
          this.arrayFilm = response.data.results;
@@ -48,6 +73,7 @@ export default {
        }).catch(errore =>{
          console.log(errore);
        });
+       }
     },
 
     selezionaContenuto(selezione){
@@ -57,6 +83,8 @@ export default {
 
     
   },
+
+  
 
   mounted(){
 
