@@ -6,7 +6,12 @@
         <div class="header-sinistra">
 
             <!-- <h1>BOOLFLIX</h1> -->
-            <img src="../assets/img/Netflix-Logo.png" alt="">
+            <img class="n-logo-esteso" src="../assets/img/Netflix-Logo.png" alt="">
+
+            <img class="n-mini-logo" src="../assets/img/netflix-mini-logo.svg" alt="">
+
+            <i class="fas fa-bars"></i>
+
             <ul>
                 <li> <a href="#"> Home </a> </li>
                 <li> <a href="#"> Serie TV </a> </li>
@@ -25,11 +30,20 @@
             v-model="cercaFilm"
             @keypress.enter="cerca">  
 
+            <select
+            v-model="selezionaFilmTv"
+            @change="filtraContenuti"
+            >
+                <option value="All" selected>All</option>
+                <option value="Film">Film</option>
+                <option value="Serie">Serie</option>
+            </select>
+
             <i class="fas fa-bell"></i>
 
             <img class="avatar" src="../assets/img/Netflix-avatar.png" alt="">
 
-            <div class="cerchio"></div>
+            <div class="cerchio">1</div>
 
         </div>
 
@@ -57,6 +71,7 @@ export default {
     data(){
         return{
             cercaFilm: '',
+            selezionaFilmTv: ''
         }
     },
     methods: {
@@ -64,6 +79,10 @@ export default {
             console.log('Header.vue fa partire un evento collegato alla stringa scritta nel input', this.cercaFilm);
             this.$emit('nuovaRicerca', this.cercaFilm);
             
+        },
+        filtraContenuti(){
+            console.log('Header invia la value della selezione', this.selezionaFilmTv);
+            this.$emit('nuovaSelezione', this.selezionaFilmTv);
         }
     }
 }
@@ -85,17 +104,39 @@ header{
                 color: red;
             }
 
-            img{
+            .n-logo-esteso{
                 margin-right: 20px;
                 width: 130px;
+                
             }
+
+            .n-mini-logo{
+                width: 20px;
+                display: none
+            }
+
+            i{
+                color: #fff;
+                font-size: 20px;
+                margin-left: 15px;
+                display: none;
+            }
+
         }
         .header-destra{
             @include center(destra);
             position: relative;
             input{
-                padding: 3px;
-                width: 200px;
+                border-radius: 5px;
+                padding: 2px;
+                width: 150px;
+            }
+            select{
+                padding: 2px;
+                width: 65px;
+                margin-left: 15px;
+                border-radius: 5px;
+                background-color: #fff;
             }
             i{
                 color: white;
@@ -119,6 +160,10 @@ header{
                 width: 8px;
                 background-color: red;
                 border-radius: 50%;
+                color: white;
+                font-size: 3px;
+                text-align: center;
+
             }
         }
     }
@@ -175,7 +220,98 @@ header{
                 padding: 4px 0px;
             }
         }
+
+    }
+
+
+    @media screen and (max-width:1410px) {
+        
+        .jumbotrone{           
+            img{
+                margin: 0;
+                width: 50%;
+                max-width: 350px;
+            }
+            .didascalia{
+                width: 50%;                
+                p{
+                    padding: 0px 10px;
+                    width: 85%;
+                }
+                button{
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1000px){
+        .header-top{
+            .header-sinistra{                
+                ul{
+                    display: none;
+                      
+                }
+                i{
+                    display: inline-block;
+                }
+                .n-logo-esteso{
+                    display: none;
+                }       
+                .n-mini-logo{
+                    display: inline-block;
+                } 
+            }
+            .header-destra{
+                .fa-search{
+                    display: none;
+                }                
+            }
+
+        }
+        .jumbotrone{
+            @include center();
+            justify-content: flex-end;
+            img{
+                margin: 0;
+                width: 60%;
+                max-width: 350px;
+            }
+            .didascalia{
+                width: 75%;
+                margin: 0px 20px 10px 20px;
+                text-align: center;
+                p{
+                    padding: 0px 10px;
+                    margin: 15px;
+                    width: 95%;
+                }
+                button{
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:660px)  {
+        .jumbotrone{
+            
+            .didascalia{
+                width: 90%;
+                margin: 0px 20px 10px 20px;
+                text-align: center;
+                p{
+                    padding: 0px 10px;
+                    margin: 15px;
+                    width: 95%;
+                }
+                .btn-lista{
+                    margin-top: 10px;
+                }
+            }
+        }
     }
 }
-
 </style>

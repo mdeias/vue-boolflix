@@ -80,6 +80,7 @@ export default {
     cursor: pointer;
     transition: 1s ease-in-out;
     transform-style: preserve-3d;
+    
 
     &:hover {
       transform: rotateY(0.5turn);
@@ -88,10 +89,12 @@ export default {
     .card__face--front{
         position: relative;
         h1{
-            
+            border-top: 1px solid red;
             font-size: 20px;
+            padding-top: 100px;
+            padding-right: 55px;
             position: absolute;
-            top: 100px;
+            top: 0px;
             left: 10px;
         }
     }
@@ -101,6 +104,7 @@ export default {
         padding: 10px;
         width: 200px;
         height: 300px;
+        overflow: hidden;
         p{
             margin: 10px 0px;
             font-size: 12px;
@@ -132,7 +136,7 @@ export default {
         }
         .descrizione{
             overflow: auto;
-            height: 140px;
+            height: 110px;
             margin-top: 10px;
             
         }

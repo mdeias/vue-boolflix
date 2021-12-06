@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header @nuovaRicerca="cercaContenuto"/>
-    <Main :filmDaStampare="arrayFilm" :serieDaStampare="arraySerieTv"/>
+    <Header @nuovaRicerca="cercaContenuto" @nuovaSelezione="selezionaContenuto"/>
+    <Main :filmDaStampare="arrayFilm" :serieDaStampare="arraySerieTv" :selezioneUtente="contenutoSelezionato"/>
   </div>
 </template>
 
@@ -22,7 +22,8 @@ export default {
     return{
       apiUrl: "https://api.themoviedb.org/3/search/",
       arrayFilm: [],
-      arraySerieTv: []
+      arraySerieTv: [],
+      contenutoSelezionato: "",
     }
   },
 
@@ -47,7 +48,14 @@ export default {
        }).catch(errore =>{
          console.log(errore);
        });
-    }
+    },
+
+    selezionaContenuto(selezione){
+      this.contenutoSelezionato = selezione;
+       console.log('App.vue ha ricevuto qualcosa da un evento (nuovaSelezione)', this.contenutoSelezionato);
+    },
+
+    
   },
 
   mounted(){

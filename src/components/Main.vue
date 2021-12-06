@@ -49,12 +49,13 @@ export default {
 
     props:{
         filmDaStampare: Array,  
-        serieDaStampare: Array  
+        serieDaStampare: Array,
+        selezioneUtente: String  
     },
 
     data(){
         return{
-           
+           filtro: this.selezioneUtente,
            bandiere: ['it', 'en']
         }
     },
@@ -74,7 +75,7 @@ main{
         margin: 0px 0px 35px 0px;
         overflow:auto;
         @include center(sinistra);
-        height: 330px;
+        height: 350px;
         position: relative;
     }
     h2{
