@@ -89,9 +89,10 @@ export default {
     .card__face--front{
         position: relative;
         h1{
+            width: 180px;
             border-top: 1px solid red;
             font-size: 20px;
-            padding-top: 100px;
+            padding-top: 60px;
             padding-right: 55px;
             position: absolute;
             top: 0px;

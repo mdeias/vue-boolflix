@@ -84,8 +84,6 @@ export default {
     
   },
 
-  
-
   mounted(){
 
     axios.get(`https://api.themoviedb.org/3/discover/movie/?certification_country=IT&certification=R&sort_by=vote_average.desc&api_key=abeacf18ff900bf858b6c58ae41300e1&language=it-IT`)

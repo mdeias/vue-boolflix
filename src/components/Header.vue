@@ -5,7 +5,7 @@
     <div class="header-top">
         <div class="header-sinistra">
 
-            <!-- <h1>BOOLFLIX</h1> -->
+            
             <img class="n-logo-esteso" src="../assets/img/Netflix-Logo.png" alt="">
 
             <img class="n-mini-logo" src="../assets/img/netflix-mini-logo.svg" alt="">
@@ -161,7 +161,7 @@ header{
                 background-color: red;
                 border-radius: 50%;
                 color: white;
-                font-size: 3px;
+                font-size: 5px;
                 text-align: center;
 
             }

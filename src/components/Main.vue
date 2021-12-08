@@ -59,6 +59,7 @@ export default {
            bandiere: ['it', 'en']
         }
     },
+    
 }
 </script>
 
